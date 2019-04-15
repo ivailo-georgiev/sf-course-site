@@ -1,0 +1,98 @@
+nav.main {
+}
+
+nav.main a {
+	display: block;
+	padding: 0.5em 1em;
+	background: #EEE;
+	border-radius: 0.3em;
+	text-decoration: none;
+	color: #900;
+}
+
+nav.main li.current-page > a,
+nav.main a:hover {
+	background: #900;
+	color: #FFF;
+}
+
+
+#toggle-main-menu {
+	position: absolute;
+	pointer-events: none;
+	opacity: 0;
+}
+
+#toggle-main-menu-button {
+	display: none;
+	padding: 1rem 1.5rem;
+	background: #EEE;
+	cursor: pointer;
+	line-height: 1;
+	text-align: center;
+}
+
+#toggle-main-menu-button span {
+	display: inline-block;
+	overflow: hidden;
+	text-indent: -200vw;
+}
+
+
+#toggle-main-menu-button:before {
+	display: inline-block;
+	content: '\f0c9';
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	padding-right: 0.5rem;
+}
+
+#toggle-main-menu-button:hover {
+	background: #900;
+	color: #FFF;
+}
+
+@media (min-width: 600px)  {
+
+	nav.main {
+		padding-left: 2rem;
+	}
+
+	nav.main li {
+		display: inline-block;
+	}
+	
+}
+
+@media (max-width: 600px)  {
+
+	nav.main {
+		display: none;
+		padding-top: 1rem;
+	}
+
+	nav.main li {
+		display: block;
+		list-style: none;
+		margin-bottom: 0.5rem;
+	}
+
+	nav.main a {
+		text-align: center;
+	}
+	
+	
+	#toggle-main-menu-button {
+		display: block;
+	}
+	
+	#toggle-main-menu:checked + header nav.main {
+		display: block;
+	}
+
+	#toggle-main-menu:checked + header #toggle-main-menu-button:before {
+		content: '\f00d';
+	}
+	
+}
+

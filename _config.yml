@@ -1,0 +1,17 @@
+title: My New Site
+email: koko@rhyndo.com
+description: Its fun and easy
+baseurl: ""
+url: ""
+twitter_username: 
+github_username:
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
