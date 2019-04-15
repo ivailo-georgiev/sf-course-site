@@ -11,6 +11,7 @@ nav.main a {
 }
 
 nav.main li.current-page > a,
+nav.main li:hover > a,
 nav.main a:hover {
 	background: #900;
 	color: #FFF;
@@ -59,7 +60,57 @@ nav.main a:hover {
 	}
 
 	nav.main li {
+		display: block;
+		padding-top: 0.2em;
+		position: relative;
+	}
+
+	nav.main li ul {
+		display: none;
+	}
+
+	nav.main li:hover > ul {
+		display: block;
+	}
+
+	nav.main > ul > li > ul > li ul {
+		position: absolute;
+		left: 100%;
+		top: 0;
+		padding-left: 0.2em;
+	}
+	
+	nav.main > ul > li {
 		display: inline-block;
+
+		& > ul {
+			position: absolute;
+			top: 100%;
+			left: 0;
+		}
+
+		& > ul > li {
+			opacity: 0;
+			pointer-events: none;
+			transform: translateY(-1rem);
+			transition: opacity 0.2s ease-in-out, transform 0.2s ease-in;
+		}
+
+		&:hover > ul {
+			display: block;
+		}
+
+		&:hover > ul > li {
+			opacity: 1;
+			transform: translateY(0);
+			pointer-events: all;
+		}
+
+		&:hover > ul > li:nth-child(2) { transition-delay: 0.05s; }
+		&:hover > ul > li:nth-child(3) { transition-delay: 0.10s; }
+		&:hover > ul > li:nth-child(4) { transition-delay: 0.15s; }
+
+		
 	}
 	
 }
