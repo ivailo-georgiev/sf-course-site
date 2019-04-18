@@ -2,7 +2,6 @@ body {
 	max-width: 1280px;
     padding: 1.5rem;
 	margin: 0 auto;
-	background: orange;
 }
 
 header {
@@ -24,9 +23,20 @@ footer {
 
 @media (min-width: 1200px) {
 
+	.site-content {
+		&:after {
+			display: block;
+			content: '';
+			clear: both;
+		}
+	}
+
 	main,
 	aside {
-		display: inline-block;
+		display: block;
+		float: left;
+		background: #EEE;
+		padding: 2rem;
 	}
 
 	main {
@@ -35,7 +45,7 @@ footer {
 
 	aside {
 		width: 30%;
-		vertical-align: top;
+		margin-left: 5%;
 	}
 	
 }

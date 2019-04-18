@@ -13,14 +13,26 @@
 				<ul>
 					{% for item in sorted_pages %}
 						{% if item.order %}
-						<li{% if item.url == page.url %} class="current-page"{% endif %}>
+						<li>
 							<a href="{{ item.url }}">{{ item.title }}</a>
 
 							<ul>
 								{% for item in sorted_pages %}
 									{% if item.order %}
-									<li{% if item.url == page.url %} class="current-page"{% endif %}>
+									<li>
 										<a href="{{ item.url }}">{{ item.title }}</a>
+
+										<ul>
+											{% for item in sorted_pages %}
+												{% if item.order %}
+												<li>
+													<a href="{{ item.url }}">{{ item.title }}</a>
+
+												</li>
+												{% endif %}
+											{% endfor %}
+										</ul>
+													
 									</li>
 									{% endif %}
 								{% endfor %}

@@ -11,6 +11,7 @@
 
 		<input type="checkbox" name="toggle-main-menu" id="toggle-main-menu" />
 		<header>
+
 			<h1>{{ site.title }}</h1>
 			<p>{{ site.description }}</p>
 
@@ -18,12 +19,21 @@
 			
 		</header>
 
-		<h1>{{ page.title }}</h1>
+		<div class="site-content">
 
-		{{ content }}
+			<main class="site-main">
+				{% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
+				{{ content }}
+			</main>
+
+			<aside class="site-sidebar">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praetereo multos, in bis doctum hominem et suavem, Hieronymum, quem iam cur Peripateticum appellem nescio. Quid enim ab antiquis ex eo genere, quod ad disserendum valet, praetermissum est? Ita fit beatae vitae domina fortuna, quam Epicurus ait exiguam intervenire sapienti. Negat esse eam, inquit, propter se expetendam.</p>
+			</aside>
+
+		</div>
 
 		<footer>
-		
+			<p>The HTML Course &copy; All rights reseved</p> 
 		</footer>
 		
 	</body>
