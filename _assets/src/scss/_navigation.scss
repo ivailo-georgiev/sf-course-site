@@ -78,8 +78,13 @@ nav.main {
 			position: relative;
 		}
 
-		& > ul > li {
-			float: left;
+		& > ul {
+			display: flex;
+			align-items: center;
+
+			& > li:last-child {
+				margin-left: auto;
+			}
 		}
 
 		li ul {

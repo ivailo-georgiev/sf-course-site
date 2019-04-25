@@ -1,0 +1,48 @@
+.gallery {
+	padding: 0;
+	margin: 0 0 2rem 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+
+	li, a, span, img {
+		display: block;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	li {
+		flex: 0 1 auto;
+		list-style: none outside;
+		margin-bottom: 5%;
+		margin-left: 4%;
+		margin-right: 4%;
+		transform: translateY(0);
+		transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+		&:hover {
+			transform: translateY(-1.8rem);
+		}
+	}
+
+	a {
+		border: 5px solid #000;
+		padding: 1rem;
+		box-shadow: 0 0 1rem 0.2em rgba(black, 0.25);
+	}
+
+	span {
+		img {
+			display: block;
+		}
+	}
+
+}
+
+aside {
+	display: none;
+}

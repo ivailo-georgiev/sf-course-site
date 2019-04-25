@@ -1,0 +1,113 @@
+
+input,
+label
+textarea {
+	display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+	padding: 0.5em 1em;
+	border: 2px solid #CCC;
+	background: #FFF;
+	border-radius: 0.3em;
+	outline: none;
+
+	&:hover {
+		border-color: #090;
+
+		& ~ label:after {
+			color: #090;
+		}
+
+	}
+
+	&:focus {
+		border-color: #900;
+
+		& ~ label {
+			color: #900;
+
+			span {
+				pointer-events: all;
+				opacity: 1;
+				transform: translateX(0);
+				
+			}
+
+			&:after {
+				color: green;
+			}
+		}
+	}
+}
+
+fieldset {
+	padding: 2em;
+
+	&, legend {
+		border: 2px solid #CCC;
+		background: #FFF;
+		border-radius: 0.3em;
+	}
+
+	legend {
+		font-weight: bold;
+		padding: 0.5em 1em;
+	}
+}
+
+input[type="submit"] {
+	padding: 1em 1.5em;
+	border-radius: 0.3em;
+	border: 2px solid #CCC;
+	margin-left: 10em;
+	outline: none;
+	font-weight: bold;
+
+	&:hover,
+	&:focus {
+		border-color: #900;
+		background: #900;
+		color: #FFF;
+		cursor: pointer;
+	}
+}
+
+.input-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	label {
+		order: -1;
+		padding-right: 1em;
+		min-width: 10em;
+		display: flex;
+		justify-content: flex-end;
+
+		span {
+			opacity: 0;
+			pointer-events: none;
+			transform: translateX(1em);
+			transition: opacity 0.3s ease-in, transform 0.3s ease-in-out;
+		}
+		
+		&:after {
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 900;
+			padding-left: 1em;
+		}
+
+	}
+	
+	&.username label:after {
+		content: '\f007';
+	}
+
+	&.password label:after {
+		content: '\f084';
+	}
+	
+}
